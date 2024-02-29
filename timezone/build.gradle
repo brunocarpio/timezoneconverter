@@ -21,7 +21,6 @@ javafx {
 }
 
 dependencies {
-    implementation 'org.kordamp.bootstrapfx:bootstrapfx-core:0.4.0'
     implementation 'org.springframework.boot:spring-boot-starter'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'com.gluonhq:ignite-spring:1.2.2'
