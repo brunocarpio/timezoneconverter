@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="368.0" prefWidth="586.0" style="-fx-background-color: linear-gradient(#e66465, #9198e5);" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.brunoca.timezone.controller.MainController">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox layoutX="20.0" layoutY="20.0" spacing="15.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="42.0" prefWidth="586.0">
+                     <children>
+                        <Label text="Timezones" textFill="WHITE">
+                           <font>
+                              <Font name="Corbel Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Region prefHeight="42.0" prefWidth="192.0" HBox.hgrow="ALWAYS" />
+                         <Button onAction="#onCurrentTimeHandler" text="Current Time" />
+                     </children>
+                  </HBox>
+                  <VBox alignment="CENTER" spacing="20.0" VBox.vgrow="ALWAYS">
+                      <padding>
+                          <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                      </padding>
+            
+                                  <Label fx:id="welcomeText" />
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
