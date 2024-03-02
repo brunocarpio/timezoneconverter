@@ -5,6 +5,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,8 @@ public class MainController implements Initializable {
     public Label countryLabel;
     @FXML
     public Slider mySlider;
+    @FXML
+    public Button currentTimeButton;
     @Autowired
     private TimezoneService timezoneService;
 
@@ -56,5 +59,12 @@ public class MainController implements Initializable {
     private void adjustTimeLabel(Instant instant) {
         myLocalDateTime = LocalDateTime.ofInstant(instant, ZoneId.of(myZone));
         timeLabel.setText(myLocalDateTime.format(formatter));
+    }
+
+    public void onCurrentTime(ActionEvent actionEvent) {
+        double midValue = (mySlider.getMax() - mySlider.getMin()) / 2.0;
+        mySlider.setValue(midValue);
+        myInstant = Instant.now();
+        adjustTimeLabel(myInstant);
     }
 }

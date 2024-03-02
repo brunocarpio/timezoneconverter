@@ -62,7 +62,12 @@
                                     </Label>
                                 </children>
                             </HBox>
-                            <Slider fx:id="mySlider" blockIncrement="1.0" max="600.0" snapToTicks="true" value="300.0" />
+                     <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                        <children>
+                           <Button fx:id="currentTimeButton" mnemonicParsing="false" onAction="#onCurrentTime" text="Current Time" />
+                                  <Slider fx:id="mySlider" blockIncrement="1.0" max="600.0" snapToTicks="true" value="300.0" />
+                        </children>
+                     </VBox>
                         </VBox>
                     </children>
                 </VBox>
