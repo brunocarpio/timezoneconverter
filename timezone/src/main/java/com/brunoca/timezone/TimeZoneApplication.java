@@ -18,7 +18,7 @@ import java.io.IOException;
         "com.gluonhq.ignite.spring"
         , "com.brunoca.timezone.service"
 })
-public class TimeZoneApplication extends Application {
+public class TimeZoneApplication extends Application implements AppLoader {
     @Autowired
     private FXMLLoader loader;
 
@@ -27,7 +27,7 @@ public class TimeZoneApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         context.init(() -> SpringApplication.run(TimeZoneApplication.class));
-        loader.setLocation(getClass().getResource("/mainView.fxml"));
+        loader.setLocation(getMainLocation());
         Parent mainView = loader.load();
         stage.setTitle("Timezone Converter");
         stage.setScene(new Scene(mainView));

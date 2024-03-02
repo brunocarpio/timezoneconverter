@@ -5,6 +5,8 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
+<?import com.brunoca.timezone.component.TimeZoneComponent?>
+
 <BorderPane prefHeight="368.0" prefWidth="586.0" style="-fx-background-color: linear-gradient(#e66465, #9198e5);" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.brunoca.timezone.controller.MainController">
     <center>
         <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
@@ -32,42 +34,13 @@
                             <padding>
                                 <Insets left="20.0" right="20.0" />
                             </padding>
-                            <HBox alignment="CENTER_LEFT" prefHeight="37.0" prefWidth="496.0">
+                            <TimeZoneComponent fx:id="timeZoneComponent" />
+                            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
                                 <children>
-                                    <VBox prefHeight="61.0" prefWidth="143.0">
-                                        <children>
-                                            <Label fx:id="regionLabel" text="Zone1" textFill="WHITE">
-                                                <font>
-                                                    <Font name="Corbel Bold" size="18.0" />
-                                                </font>
-                                            </Label>
-                                            <Label fx:id="countryLabel" text="Zone2" textFill="WHITE">
-                                                <font>
-                                                    <Font name="Corbel Bold" size="16.0" />
-                                                </font>
-                                            </Label>
-                                        </children>
-                                        <padding>
-                                            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                        </padding>
-                                    </VBox>
-                                    <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
-                                    <Label fx:id="timeLabel" text="Time" textFill="WHITE">
-                                        <font>
-                                            <Font name="Corbel Bold" size="24.0" />
-                                        </font>
-                                        <padding>
-                                            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                        </padding>
-                                    </Label>
+                                    <Button fx:id="currentTimeButton" mnemonicParsing="false" onAction="#onCurrentTime" text="Current Time" />
+                                    <Slider fx:id="mySlider" blockIncrement="1.0" max="600.0" snapToTicks="true" value="300.0" />
                                 </children>
-                            </HBox>
-                     <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
-                        <children>
-                           <Button fx:id="currentTimeButton" mnemonicParsing="false" onAction="#onCurrentTime" text="Current Time" />
-                                  <Slider fx:id="mySlider" blockIncrement="1.0" max="600.0" snapToTicks="true" value="300.0" />
-                        </children>
-                     </VBox>
+                            </VBox>
                         </VBox>
                     </children>
                 </VBox>
